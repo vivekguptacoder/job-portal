@@ -1,10 +1,11 @@
-import React from 'react';
-
+import React from "react";
+import Navbar from "./component/Navbar"; // Correct import path
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
+    <div>
+      <Navbar />
+      {/* Add other components or pages here */}
     </div>
   );
 }
