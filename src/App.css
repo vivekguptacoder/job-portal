@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @plugin "daisyui";
-/* Custom Animations */
+
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

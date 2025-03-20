@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router,  Route, Routes } from "react-router-dom";
-import Navbar from "./component/Navbar"; // Correct import path
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./component/Navbar";
 import LandingPage from "./component/LandingPage";
 import ResumeAI from "./component/ResumeAI";
 import HunterPilot from "./component/HunterPilot";
-
 import JobCard from "./component/JobCard";
 import Footer from "./component/Footer";
+
 const jobs = [
   {
     jobTitle: "Frontend Developer",
@@ -39,43 +39,33 @@ const jobs = [
     applyLink: "#",
   },
 ];
-function App() { 
-  
+
+function App() {
   return (
     <>
-    <div>
-      <Navbar />
-      <LandingPage />
-       
-      
-      <Router>
-      <Routes>
-        {/* <Route path="/" element={<LandingPage />} /> */}
-        <Route path="/hunter-pilot" element={<HunterPilot />} />
-        <Route path="/resume-ai" element={<ResumeAI />} />
-       
-      </Routes>
-    </Router>
-        
-      
-      
-     
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 min-h-screen py-12">
-      <div className="container mx-auto px-6">
-        <h1 className="text-4xl font-bold text-blue-900 mb-8 text-center">
-          Latest Job Openings
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {jobs.map((job, index) => (
-            <JobCard key={index} job={job} />
-          ))}
+      <div>
+        <Navbar />
+        <LandingPage />
+        <Routes>
+          <Route path="/hunter-pilot" element={<HunterPilot />} />
+          <Route path="/resume-ai" element={<ResumeAI />} />
+        </Routes>
+
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 min-h-screen py-12">
+          <div className="container mx-auto px-6">
+            <h1 className="text-4xl font-bold text-blue-900 mb-8 text-center">
+              Latest Job Openings
+            </h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {jobs.map((job, index) => (
+                <JobCard key={index} job={job} />
+              ))}
+            </div>
+          </div>
         </div>
+
+        <Footer />
       </div>
-    </div>
-      <Footer />
-     
-      {/* Add other components or pages here */}
-    </div>
     </>
   );
 }
